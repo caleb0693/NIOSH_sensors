@@ -9,10 +9,10 @@ import base64
 
 st.set_page_config(page_title="NIOSH Sensor Data Visualization Project", layout="wide")
 st.title("NIOSH Sensor Data Visualization Project")
-img = Image.open("/Users/calebginorio/Desktop/niosh_sensor.png")
+img = Image.open("niosh_sensor.png")
 img_width, img_height = img.size
 
-sensor_data = pd.read_csv("/Users/calebginorio/Desktop/October31.csv")
+sensor_data = pd.read_csv("October31.csv")
 sensor_data["Timestamp"] = pd.to_datetime(sensor_data["Date"] + " " + sensor_data["Time"], errors="coerce")
 sensor_data = sensor_data.drop(columns=["Date", "Time"]) 
 sensor_columns = ["AboveSuperSac", "ControlRoom", "Palletizer", "TransferPoint", "TruckLoading"]
@@ -136,7 +136,7 @@ def get_base64_encoded_image(image_path):
     with open(image_path, "rb") as img_file:
         return base64.b64encode(img_file.read()).decode()
 
-image_path = "/Users/calebginorio/Desktop/intellygiene.png" 
+image_path = "intellygiene.png" 
 website_url = "https://intellygiene.com" 
 
 encoded_image = get_base64_encoded_image(image_path)
