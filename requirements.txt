@@ -1,6 +1,6 @@
-streamlit==1.25.0
-pandas==1.5.3
+streamlit
+pandas
 Pillow
-matplotlib==3.8.0
-numpy>=1.25.0
-streamlit-drawable-canvas==0.9.3
+matplotlib
+numpy
+streamlit-drawable-canvas
